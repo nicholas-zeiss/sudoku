@@ -10,10 +10,10 @@
   </head>
 
   <body>
-    <div id="header">
+    <header>
       <h2>The Nicholas Zeiss website for people who can't sudoku good and want to do other things good too</h2>
-      <h4>Notes: 0 denotes an undefined entry. Nondigit entries will be treated as 0. Fill in your table and use the buttons to check its validity and display a solution.</h4>
-    </div>
+      <h4>Notes: 0 denotes a blank cell. Nondigit entries will be treated as blank.</h4>
+    </header>
 
     <div id="interface">
       <table>
@@ -24,15 +24,14 @@
         <input type="button" value="Display Solution" id="showSolution"/>
         <input type="button" value="Clear Board" id="clearBoard"/>
       </div>
+    </div>
 
-      <div id="messages">
-        <h3 id="placeholder"></h3>
-        <h3 id="warning">The table is invalid and has no solution.</h3>
-        <h3 id="valid">The table is valid.</h3>
-        <h3 id="invalid">The table is invalid and shouldn't be attempted.</h3>
-        <h3 id="solved">Here is the solution.</h3>
-        <h3 id="unsolved">The board is valid and yet has no solutions, you should probably show this to a mathematician</h3>
-      </div>
+    <div id="messages">
+      <h3 id="warning">The table is invalid and has no solution.</h3>
+      <h3 id="valid">The table is valid.</h3>
+      <h3 id="invalid">The table is invalid and shouldn't be attempted.</h3>
+      <h3 id="solved">Here is the solution.</h3>
+      <h3 id="unsolved">The board is valid and yet has no solutions, you should probably show this to a mathematician</h3>
     </div>
 
     <script src="bundle.js"></script>

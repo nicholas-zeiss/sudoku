@@ -26,7 +26,6 @@ $(document).ready(function() {
 
 	//hide output messages until needed
 	$('#messages >').hide();
-	$('#placeholder').show();
 
 
 	//checks the validity of the puzzle
