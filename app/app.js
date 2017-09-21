@@ -1,3 +1,9 @@
+
+
+import $ from 'jquery';
+import { isValid, solve } from './solver';
+
+
 $(document).ready(function() {
 	//create the internal representation of the sudoku board
 	var table = new Array(9).fill(1).map(el => new Array(9).fill(0));

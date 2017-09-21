@@ -64,4 +64,6 @@ typings/
 #custom values
 .DS_Store
 
+app/bundle.js
+
 

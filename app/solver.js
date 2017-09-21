@@ -116,3 +116,6 @@ function isValid(board) {
     return true;
   }
 }
+
+export { isValid, solve };
+
