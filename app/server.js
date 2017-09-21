@@ -1,14 +1,18 @@
-var express = require('express');
-const path = require('path');
+/**
+ *
+ *	Barebones express server, only has to serve up static files
+ *
+**/ 
 
-var app = express();
 
-console.log(path.join(__dirname, '.'), path.join(__dirname, './index.html'))
+const express = require('express');
 
-app.use(express.static(path.join(__dirname, '.')));
+const app = express();
 
-app.get('/', function(req, res) {
-	res.sendFile(path.join(__dirname, './index.html'));
+app.use(express.static(__dirname));
+
+app.get('/', (req, res) => {
+	res.sendFile('index.html');
 });
 
 
