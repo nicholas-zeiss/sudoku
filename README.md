@@ -1,10 +1,8 @@
 # Sudoku Solver
+A web app that helps you solve sudoku puzzles. It can check whether a puzzle is valid and can solve the puzzle for you.  
+Been living under a rock? Read about sudoku [here](https://en.wikipedia.org/wiki/Sudoku).  
 
-A web app that helps you solve sudoku puzzles. It can check whether a puzzle is valid and can solve the puzzle for you.
-
-Been living under a rock? Read about sudoku [here](https://en.wikipedia.org/wiki/Sudoku)  
-
-## Installation
+##Installation
 
 All you need to do to get this site up and running on a local is a few simple commands:
 ```
