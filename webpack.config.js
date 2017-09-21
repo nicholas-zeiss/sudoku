@@ -10,10 +10,10 @@ module.exports = {
 	},
 	module: {
 		loaders: [{
-	      test: /\.js$/,
-	      loaders: ['babel-loader?presets[]=es2015'],
-	      include: path.join(__dirname, 'app')
-	  }]
+			test: /\.js$/,
+			loaders: ['babel-loader?presets[]=es2015'],
+			include: path.join(__dirname, 'app')
+		}]
 	}
 };
 

@@ -1,75 +1,108 @@
 
 
 body {
-  background-color: #bcebff;
-  display: flex;
+	width: 100vw;
+	min-height: 100vh;
+
+	margin: 0;
+  
   font-family: Arial;
-  flex-direction: column;
-  align-items: center;
+  
+  background-color: #bcebff;
 }
 
-#header {
-	flex: auto;
-	background-color: red;
+
+header {
+	border: 1px solid transparent;
+	box-shadow: 0 0 10px 2px black;
+	margin-bottom: 40px;
+
 	text-align: center;
-	border-radius: 10px;
-	margin-bottom: 20px;
+
+	background-color: red;
 }
 
-#header > h2, h4 {
+
+header > h2, h4 {
 	margin: 10px;
 }
+
 
 #interface {
 	display: flex;
 	flex-direction: column;
 }
 
+
 table {
-  background-color: #1252ba;
-  border: none;
+	z-index: 1;
+
   border-radius: 15px;
 	border-spacing: 10px;
-	margin: auto;
+	box-shadow: 0 0 7px 1px black;
+	margin: 0 auto;
+  
+  background-color: #1252ba;
 }
 
-td {
-	border: none;
-}
 
 td > input {
-	background-color: white;
+	width: 36px;
+	height: 36px;
+
 	border: none;
 	border-radius: 5px;
+	
 	font-size: 35px;
-	font-color: black;
+	text-align: center;
 }
+
 
 #input-buttons {
-	background-color: #5fc4ef;
 	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	margin: auto;
-	width: 95%;
+
+	padding: 5px 15px 2px;
 	border-radius: 0px 0px 10px 10px;
+	box-shadow: 0 0 7px 1px black;
+	margin: 0 auto;
+	
+	background-color: #5fc4ef;
 }
 
+
 #input-buttons > input {
-	background-color: #3fe299;
-	border-radius: 5px;
-	border: none;
 	padding: 8px;
-	margin: 10px 5px;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0 0 7px black;
+	margin: 10px 10px;
+	
 	font-size: 14px;
+	font-weight: bold;
+	
+	background-color: #3fe299;
+
+	cursor: pointer;
 }
+
+
+#input-buttons > input:first-child {
+	margin-left: 0;
+}
+
+
+#input-buttons > input:last-child {
+	margin-right: 0;
+}
+
 
 #messages {
 	padding: 10px;
 }
 
+
 #messages > h3 {
 	text-align: center;
 	font-size: 25px;
-
 }
+

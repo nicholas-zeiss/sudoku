@@ -1,3 +1,8 @@
+/**
+ *	
+ *	Initializes the app and serves as glue between the view/controls and the logic for solving the board
+ *	
+**/ 
 
 
 import $ from 'jquery';
@@ -5,75 +10,74 @@ import { isValid, solve } from './solver';
 
 
 $(document).ready(function() {
-	//create the internal representation of the sudoku board
-	var table = new Array(9).fill(1).map(el => new Array(9).fill(0));
+	//our puzzle model
+	let table = new Array(9).fill(1).map(() => new Array(9).fill(0));
 
-	//create our actual sudoku board on the page
-	for (var i = 0; i < 9; i++) {
-		$("table").append("<tr id='row-" + i + "'</tr>");
-		for (var j = 0; j < 9; j++) {
-			$("#row-" + i).append('<td><input type="text" placeholder="0" maxLength="1" size="1" id="col-' + i + j + '"/></td>');
+
+	//render view for the puzzle model
+	for (let i = 0; i < 9; i++) {
+		$('table').append(`<tr id="row-${i}"></tr>`);
+		
+		for (let j = 0; j < 9; j++) {
+			$('#row-' + i).append(`<td><input type="text" placeholder="0" maxLength="1" size="1" id="col-${i}${j}" onFocus="this.select()"/></td>`);
 		}
 	}
 
-	//hide all output until they need to be seen
-	$("#messages >").hide();
-	$("#placeholder").show();
 
-	//checks the validity of the table
-	$("#checkValid").on('click', function() {
-    $("#messages >").hide();
+	//hide output messages until needed
+	$('#messages >').hide();
+
+
+	//checks the validity of the puzzle
+	$('#checkValid').on('click', () => {
+		$('#messages >').hide();
 		
 		updateTable();
 		
-		if (isValid(table)) {
-			$("#valid").show();
+		isValid(table) ? $('#valid').show() : $('#invalid').show();
+	});
+
+
+	//solves puzzle, shows solution
+	$('#showSolution').on('click', () => {
+		$('#messages >').hide();
+    
+		updateTable();
+    
+		if (!isValid(table)) {
+			$('#warning').show();
+		
+		} else if (solve(table)) {
+			$('#solved').show();
+			loop((cell, i, j) => cell.val(table[i][j]));
+		
 		} else {
-			$("#invalid").show();
+			$('#unsolved').show();
 		}
 	});
 
-	//solves the table and shows the solution
-	$("#showSolution").on('click', function() {
-    $("#messages >").hide();
-    
-    updateTable();
-    
-    if (!isValid(table)) {
-    	$("#warning").show()
-    } else if (solve(table)) {
-    	$("#solved").show()
-    
-    	loop(function(entry, i, j) {
-    		entry.val(table[i][j]);
-    	})
-    } else {
-    	$("#unsolved").show();
-    }
-	});
 
-	//clears the board
-	$("#clearBoard").on('click', function() {
-		$("#messages >").hide();
+	//clears the puzzle
+	$('#clearBoard').on('click', () => {
+		$('#messages >').hide();
 		
-		loop(function(entry) {
-			entry.val(0)
-		})
+		loop(cell => cell.val(0));
 	});
 	
-	//loops over the sudoku board, the arguments for the callback are input element, row, and col
+
+	//loops over the sudoku board input elements and executes a callback
 	function loop(cb) {
-		for (var i = 0; i < 9; i++) {
-			for (var j = 0; j < 9; j++) {
-				cb($("#row-" + i).find("#col-" + i + j), i, j);
+		for (let i = 0; i < 9; i++) {
+			for (let j = 0; j < 9; j++) {
+				cb($('#row-' + i).find('#col-' + i + j), i, j);
 			}
 		}
 	}
 
-	//sets the board to match the input
+
+	//updates model to match view, if cell value is not a digit it defaults to 0 which is considered blank
 	function updateTable() {
-		loop(function(entry, i, j) {
-			table[i][j] = Number(entry.val()) || 0;			//if the value of the input element is not a number default to 0
-		});
+		loop((cell, i, j) => table[i][j] = Number(cell.val()) || 0);
 	}
-})
+});
+
