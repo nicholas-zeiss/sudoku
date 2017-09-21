@@ -1,0 +1,22 @@
+{
+  "name": "sudoku",
+  "version": "1.0.0",
+  "description": "A web app to solve sudoku puzzles",
+  "main": "server.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicholas-zeiss/sudoku.git"
+  },
+  "author": "Nicholas Zeiss",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicholas-zeiss/sudoku/issues"
+  },
+  "homepage": "https://github.com/nicholas-zeiss/sudoku#readme"
+}
