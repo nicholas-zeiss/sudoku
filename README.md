@@ -15,6 +15,6 @@ That's it! Sudoku Solver will now be running on your localhost at port 3000.
 
 ## Implementation
 
-The front-end consists of HTML, CSS, JS, and jQuery. The backend runs off of express. Note that es6 syntax is widely used so before the JS is sent to the browser it must be transpiled and bundled. Babel and webpack are included as are their configurations; simply running `npm start` will take care of the rest.
+The front-end consists of HTML, CSS, and JS with jQuery. The backend runs off of Node and express. Note that es6 syntax is widely used so before the JS is sent to the browser it must be transpiled and bundled. Babel and webpack are included as are their configurations; simply running `npm start` will take care of the rest.
 
 The code responsible for doing the actual heavy lifting and solving a sudoku board is a recursive [backtracking algorithm](https://en.wikipedia.org/wiki/Backtracking). Feel free to jump into [solver.js](app/solver.js) to check out my implimentation.
