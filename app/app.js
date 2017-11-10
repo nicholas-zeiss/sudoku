@@ -10,11 +10,11 @@ import { isValid, solve } from './solver';
 
 
 $(document).ready(function() {
-	//our puzzle model
-	let table = new Array(9).fill(1).map(() => new Array(9).fill(0));
+	// our puzzle model
+	const table = new Array(9).fill(1).map(() => new Array(9).fill(0));
 
 
-	//render view for the puzzle model
+	// render view for the puzzle model
 	for (let i = 0; i < 9; i++) {
 		$('table').append(`<tr id="row-${i}"></tr>`);
 		
@@ -24,11 +24,11 @@ $(document).ready(function() {
 	}
 
 
-	//hide output messages until needed
+	// hide output messages until needed
 	$('#messages >').hide();
 
 
-	//checks the validity of the puzzle
+	// checks the validity of the puzzle
 	$('#checkValid').on('click', () => {
 		$('#messages >').hide();
 		
@@ -38,7 +38,7 @@ $(document).ready(function() {
 	});
 
 
-	//solves puzzle, shows solution
+	// solves puzzle, shows solution
 	$('#showSolution').on('click', () => {
 		$('#messages >').hide();
     
@@ -57,7 +57,7 @@ $(document).ready(function() {
 	});
 
 
-	//clears the puzzle
+	// clears the puzzle
 	$('#clearBoard').on('click', () => {
 		$('#messages >').hide();
 		
@@ -65,7 +65,7 @@ $(document).ready(function() {
 	});
 	
 
-	//loops over the sudoku board input elements and executes a callback
+	// loops over the sudoku board input elements and executes a callback
 	function loop(cb) {
 		for (let i = 0; i < 9; i++) {
 			for (let j = 0; j < 9; j++) {
@@ -75,7 +75,7 @@ $(document).ready(function() {
 	}
 
 
-	//updates model to match view, if cell value is not a digit it defaults to 0 which is considered blank
+	// updates model to match view, if cell value is not a digit it defaults to 0 which is considered blank
 	function updateTable() {
 		loop((cell, i, j) => table[i][j] = Number(cell.val()) || 0);
 	}
