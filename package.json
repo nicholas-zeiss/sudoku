@@ -14,8 +14,10 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prestart": "webpack --optimize-minimize",
-    "start": "node app/server.js"
+    "prestart": "webpack --watch &",
+    "start": "node app/server.js",
+    "preproduction": "webpack --optimize-minimize",
+    "production": "node app/server.js"
   },
   "repository": {
     "type": "git",
