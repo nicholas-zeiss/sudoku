@@ -4,7 +4,7 @@ Been living under a rock? Read about sudoku [here](https://en.wikipedia.org/wiki
 
 ## Installation
 
-All you need to do to get this site up and running on a local is a few simple commands:
+All you need to do to get this site up and running locally is a few simple commands:
 ```
  $ git clone https://github.com/nicholas-zeiss/sudoku.git
  $ cd sudoku/
